@@ -1,15 +1,17 @@
 package example.producer
 
 import akka.actor.{ActorRef, Actor, ActorSystem, Props}
+import scala.util.Random
 
 class KafkaActor extends Actor {
 
   val topicName = "testTopic"
   val strProducer = Producer[String](topicName)
+  val mensaje = Random.alphanumeric.take(2000).mkString
 
   def receive = {
     case s:String => strProducer.send(s)
-    case i:Int => for (x <- 1 until i ) strProducer.send(x.toString)
+    case i:Int => for (x <- 1 until i ) strProducer.send(mensaje)
     case _       => println("huh?")
   }
 }
