@@ -8,8 +8,5 @@ libraryDependencies ++= Seq(
       "org.scalatest" % "scalatest_2.10" % "2.2.1" % "test",
       "org.twitter4j" % "twitter4j-core" % "4.0.2",
       "org.twitter4j" % "twitter4j-stream" % "4.0.2",
-        "com.typesafe" %% "scalalogging-slf4j" % "1.0.1",
-        "org.slf4j" % "slf4j-api" % "1.7.1",
-        "org.slf4j" % "log4j-over-slf4j" % "1.7.1",  // for any java classes looking for this
-        "ch.qos.logback" % "logback-classic" % "1.0.3"
+  "com.typesafe.akka" % "akka-actor_2.10" % "2.3.12"
 )

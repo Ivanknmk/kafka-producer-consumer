@@ -8,8 +8,6 @@ object ProducerExample {
 
     val strProducer = Producer[String](topicName)
 
-    print
-
     for (ln <- io.Source.stdin.getLines) strProducer.send(ln)
   }
 }
