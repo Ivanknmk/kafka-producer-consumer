@@ -9,7 +9,7 @@ class KafkaActor extends Actor {
 
   def receive = {
     case s:String => strProducer.send(s)
-    case i:Int => for (x <- 1 until i ) strProducer.send(i.toString)
+    case i:Int => for (x <- 1 until i ) strProducer.send(x.toString)
     case _       => println("huh?")
   }
 }
